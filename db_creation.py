@@ -49,7 +49,6 @@ def image_to_vector(image_path):
 def db_creation(dimension, db_size, image_db_path):
 
     index = faiss.index_factory(dimension, 'IDMap,Flat')
-    print(index.is_trained)
     paths_dictionary = {}
     for i, filename in enumerate(os.listdir(image_db_path), start=0):
 
@@ -66,7 +65,6 @@ def db_creation(dimension, db_size, image_db_path):
 
         pprint(paths_dictionary)
 
-    print(index.ntotal)
     with open('paths.json', 'w')as f:
         json.dump(paths_dictionary, f)
 

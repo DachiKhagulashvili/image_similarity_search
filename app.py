@@ -20,7 +20,6 @@ def index():
         target_path = f'target_image_path/{filename}'
         results = similarity_search.index_search(target_path, 4)
         result_paths = []
-        print(paths)
 
         for i in results[0]:
             result_paths.append(paths[f'{i}'])
