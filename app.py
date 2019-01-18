@@ -16,7 +16,6 @@ def index():
         image = request.files['file']  # file is name of input tag
 
         filename = secure_filename(image.filename)
-        image.save(os.path.join('saving_destination_path', filename))
 
         target_path = f'target_image_path/{filename}'
         results = similarity_search.index_search(target_path, 4)
